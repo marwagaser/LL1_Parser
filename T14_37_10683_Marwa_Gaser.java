@@ -1,6 +1,5 @@
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.HashMap;
 import java.util.HashSet;
 import java.util.LinkedHashMap;
 import java.util.Set;
@@ -519,7 +518,12 @@ public class T14_37_10683_Marwa_Gaser {
 				}
 
 			}
-			return derivation.toString().substring(1,derivation.toString().length()-1);
+			String ans="";
+			for (int i=0;i<derivation.size();i++) {
+				ans+=derivation.get(i)+",";
+			}
+			ans = ans.substring(0, ans.length()-1);
+			return ans;
 		}
 
 		public static void printarray(ArrayList<String> x) {
