@@ -113,7 +113,7 @@ public class T14_37_10683_Marwa_Gaser {
 							}
 						}
 						for (int z = 0; z < length; z++) { // For each sentential form
-							for (int j = 0; j < current.length; j++) { // loop on every varaible/letter on the RHS of
+							for (int j = 0; j < current.length; j++) { // loop on every variable/letter on the RHS of
 																		// every
 																		// sentential form
 								Character x = current[j].charAt(0);
@@ -340,7 +340,7 @@ public class T14_37_10683_Marwa_Gaser {
 
 									}
 								} else if (j + 1 == current.length) {
-									// if im the last var my follow is the parents follow
+									// if I'm the last var my follow is the parents follow
 									String followLHS = Followtable.get(key);
 									String[] LHSarr = splitString(followLHS, ",");
 									for (int r = 0; r < LHSarr.length; r++) {
@@ -453,14 +453,14 @@ public class T14_37_10683_Marwa_Gaser {
 		 * @return A string representation of a left most derivation
 		 */
 		public String parse(String s) {
-			s=s+"$";
+			s = s + "$";
 			Stack<String> stack = new Stack<String>();
 			ArrayList<String> derivation = new ArrayList<String>();
 			derivation.add(this.grammar.charAt(0) + "");
 			stack.push(this.grammar.charAt(0) + ""); // push the start symbol on top of the stack
 			while (!stack.isEmpty()) {
 
-				  if ((s.charAt(0) + "").equals(stack.peek())) {
+				if ((s.charAt(0) + "").equals(stack.peek())) {
 					if (s.length() > 1) {
 						s = s.substring(1);
 						stack.pop();
@@ -518,19 +518,14 @@ public class T14_37_10683_Marwa_Gaser {
 				}
 
 			}
-			String ans="";
-			for (int i=0;i<derivation.size();i++) {
-				ans+=derivation.get(i)+",";
+			String ans = "";
+			for (int i = 0; i < derivation.size(); i++) {
+				ans += derivation.get(i) + ",";
 			}
-			ans = ans.substring(0, ans.length()-1);
+			ans = ans.substring(0, ans.length() - 1);
 			return ans;
 		}
 
-		public static void printarray(ArrayList<String> x) {
-			for (int i = 0; i < x.size(); i++) {
-				System.out.print(x.get(i) + " ");
-			}
-		}
 	}
 
 	public static void main(String[] args) {
@@ -541,7 +536,6 @@ public class T14_37_10683_Marwa_Gaser {
 		 */
 
 		String grammar = "S,iST,e;T,cS,a";
-		// String grammar = "S,AB;A,iA,n;B,CA;C,xC,y";
 		String input1 = "iiac";
 		String input2 = "iia";
 		CFG g = new CFG(grammar);
